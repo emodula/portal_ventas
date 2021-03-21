@@ -1,0 +1,39 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+    Index
+{% endblock %}
+
+{% block main %}
+    <strong><h2>Operaciones de {{ resultUser[0].username }}</h2></strong><p></p>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">ID Cliente</th>
+                <th scope="col">ID Articulo</th>
+                <th scope="col">Precio</th>
+                <th scope="col">Fecha</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for i in resultOper %}
+                <tr>
+                    <th>
+                        {{ i["id"] }}
+                    </th>
+                    <td>
+                        {{ i["id_cliente"] }}
+                    </td>
+                    <td>
+                        {{ i["id_articulo"] }}
+                    </td>
+                    <td>
+                        ${{ i["precio"] }}
+                    </td>
+                    <td>
+                        {{ i["creado"] }}
+                    </td>
+                </tr>
+            {% endfor %}
+{% endblock %}

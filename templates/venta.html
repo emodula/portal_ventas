@@ -1,0 +1,55 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+    Venta
+{% endblock %}
+
+{% block main %}
+    <strong><h1>Crear Venta</h1></strong>
+    <br>
+    <form action="/venta" method="post">
+        {% if existCli %}
+            <strong><h3>Datos Cliente</h3></strong><p></p>
+            <label>Nombre</label>
+            <input type="text" class="form-control input-sm" id="nombre_cliente" name="nombre_cliente" value="{{ result[0].nombre }}">
+            <label>Apellido</label>
+            <input type="text" class="form-control input-sm" id="apellido_cliente" name="apellido_cliente" value="{{ result[0].apellido }}">
+            <label>Direccion</label>
+            <input type="text" class="form-control input-sm" id="direccion_cliente" name="direccion_cliente" value="{{ result[0].direccion }}">
+            <label>Email</label>
+            <input type="mail" class="form-control input-sm" id="email_cliente" name="email_cliente" value="{{ result[0].email }}">
+            <label>Telefono</label>
+            <input type="text" class="form-control input-sm" id="telefono_cliente" name="telefono_cliente" value="{{ result[0].telefono }}">
+            <label>DNI</label>
+            <input type="text" class="form-control input-sm" id="dni_cliente" name="dni_cliente" value="{{ result[0].dni }}">
+            <p></p>
+            <div>
+                <strong><h3>Elegir articulo</h3></strong><p></p>
+                <label>Categoria</label><br>
+                <select class="form-control input-sm" id="categoriaSelect" name="categoriaSelect">
+                    <option value="A">Selecciona Categoria</option>
+                    {% for i in categ %}
+                        <option value="{{ i.nombreCategoria }}">{{ i.nombreCategoria }}</option>
+                    {% endfor %}
+                </select><br>
+                <button class="btn btn-primary" type="submit">Seleccionar</button><p></p>
+                <label>Articulo</label><br>
+                <select class="form-control input-sm" id="articuloSelect" name="articuloSelect">
+                    <option value="A">Selecciona Articulo</option>
+                    {% for i in resultArtic %}
+                        <option value="{{ i.nombre }}">{{ i.nombre }}</option>
+                    {% endfor %}
+                </select><br>
+                <label>Cantidad</label>
+                <input type="text" class="form-control input-sm" id="cantidad" name="cantidad"><p></p>
+                <button class="btn btn-primary" type="submit">Crear venta</button><br>
+            </div>
+        {% else %}
+        <strong><h3>Buscar cliente</h3></strong><p></p>
+            <label>DNI</label>
+            <input type="text" class="form-control input-sm" id="dni_cliente" name="dni_cliente">
+            <p></p>
+            <button class="btn btn-primary" type="submit">Buscar</button>
+        {% endif %}
+    </form>
+{% endblock %}

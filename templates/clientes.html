@@ -1,0 +1,26 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+    Clientes
+{% endblock %}
+
+{% block main %}
+    <strong><h3>Crear Cliente</h3></strong><p></p>
+    <form action="/clientes" method="post">
+            <label>Nombre</label>
+            <input type="text" class="form-control input-sm" id="nombre_cliente" name="nombre_cliente">
+            <label>Apellido</label>
+            <input type="text" class="form-control input-sm" id="apellido_cliente" name="apellido_cliente">
+            <label>Direccion</label>
+            <input type="text" class="form-control input-sm" id="direccion_cliente" name="direccion_cliente">
+            <label>Email</label>
+            <input type="mail" class="form-control input-sm" id="email_cliente" name="email_cliente">
+            <label>Telefono</label>
+            <input type="text" class="form-control input-sm" id="telefono_cliente" name="telefono_cliente">
+            <label>DNI</label>
+            <input type="text" class="form-control input-sm" id="dni_cliente" name="dni_cliente">
+            <p></p>
+            <button class="btn btn-primary" type="submit">Guardar</button>
+        </div>
+    </form>
+{% endblock %}

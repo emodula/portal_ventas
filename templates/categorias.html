@@ -1,0 +1,15 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+    Categorias
+{% endblock %}
+
+{% block main %}
+    <strong><h3>Crear Categoria</h3></strong><p></p>
+    <form action="/categorias" method="post">
+        <label>Categoria:</label>
+        <input type="text" class="form-control input-sm" name="new_categoria">
+        <br>
+        <button class="btn btn-primary" type="submit">Guardar</button>
+    </form>
+{% endblock %}

@@ -1,0 +1,30 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+    Articulos
+{% endblock %}
+
+{% block main %}
+    <strong><h3>Crear Articulo</h3></strong><p></p>
+    <form action="/articulos" method="post">
+        <label>Categoria</label><br>
+        <div>
+            <select class="form-control input-sm" id="categoriaSelect" name="categoriaSelect">
+                <option value="A">Selecciona Categoria</option>
+                {% for i in categ %}
+                    <option value="{{ i.nombreCategoria }}">{{ i.nombreCategoria }}</option>
+                {% endfor %}
+            </select><br>
+            <label>Nombre</label>
+            <input type="text" class="form-control input-sm" id="nombre_articulo" name="nombre_articulo">
+            <label>Descripcion</label>
+            <input type="text" class="form-control input-sm" id="descripcion" name="descripcion">
+            <label>Cantidad</label>
+            <input type="text" class="form-control input-sm" id="cantidad" name="cantidad">
+            <label>Precio</label>
+            <input type="text" class="form-control input-sm" id="precio" name="precio">
+            <p></p>
+            <button class="btn btn-primary" type="submit">Guardar</button>
+        </div>
+    </form>
+{% endblock %}

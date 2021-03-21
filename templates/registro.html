@@ -1,0 +1,38 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+    Registro
+{% endblock %}
+{% block style %}style="background-color: gray"{% endblock %}
+{% block main %}
+<br><br><br>
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-4"></div>
+			<div class="col-sm-4">
+				<div class="card">
+                    <div class="card text-white bg-primary mb-3">
+					    <div class="card card-header">Registrar Usuario</div>
+                    </div>
+					<div class="card-body">
+                        <form action="/registro" method="post">
+                            <label>Usuario</label>
+							<input type="text" class="form-control input-sm" name="username">
+                            <label>Nombre</label>
+							<input type="text" class="form-control input-sm" name="nombre">
+                            <label>Apellido</label>
+							<input type="text" class="form-control input-sm" name="apellido">
+							<label>Contraseña</label>
+							<input type="password" name="password" class="form-control input-sm">
+                            <label>Confirme contraseña</label>
+							<input type="password" name="confirmacion" class="form-control input-sm">
+                            <br>
+                            <button class="btn btn-danger" type="submit">Registro</button>
+                        </form>
+                    </div>
+				</div>
+			</div>
+			<div class="col-sm-4"></div>
+		</div>
+	</div>
+{% endblock %}
